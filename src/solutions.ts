@@ -1,14 +1,10 @@
 //ProBlem 01
 
-function multiplyValue(value: number, multiplier?: number):number {
+function multiplyValue(value: number, multiplier?:number):number {
+if (multiplier ===undefined) {
+      return value * 2;}
 
-
-  if (multiplier ===undefined) {
-    return value * 2;
-  }
-
-
-  return value * multiplier;
+return value * multiplier;
 }
 
 //========================================================================================================================================
@@ -19,16 +15,13 @@ function processInput(value:string |number| boolean):string |number {
     
     {
     return value.trim().toLowerCase();
-
-  } 
+} 
   
   else if (typeof value === "number")
     
-    {
-    return value * 10;
-  } 
+{ return value * 10;} 
   
-  else {
+else {
     return value ? "Active" : "Inactive";
   }
 
@@ -37,11 +30,10 @@ function processInput(value:string |number| boolean):string |number {
 //==========================================================================================================================================
 //Problem 03
 function formatCoordinate(
-
-  coordinate: readonly [number,number,string]
+coordinate: readonly [number,number,string]
 ): 
 string {
-  const [latitude, longitude, locationName]= coordinate;
+const [latitude, longitude, locationName]= coordinate;
 
  return `Location: ${locationName} (${latitude},${longitude})`;
 }
@@ -53,7 +45,7 @@ string {
 function concatenateArrays<T>(...arrays:T[][]): T[] {
 
 
-  return arrays.flat();
+return arrays.flat();
 }
 
 //============================================================================================================================================
@@ -80,9 +72,8 @@ function getPopularCourses(courses: Course[], minStudents: number): Course[] {
 
 function pluckValues<T, K extends keyof T>(items:T[], key:K):T[K][] {
     
-  return items.map((item: T):T[K] => item[key]);
+return items.map((item: T):T[K] => item[key]);
 
-  
 }
 
 //=========================================================================================================================================
@@ -98,7 +89,7 @@ this.name = name;
 
   }
 
-  getDetails(): string {
+getDetails(): string {
 
     return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
 
@@ -115,7 +106,7 @@ constructor(name: string, baseSalary: number, department: string) {
 
     super(name, baseSalary);
  this.department = department;
-  }
+}
 
 getRoleInfo(): 
 string {
@@ -133,15 +124,16 @@ return new Promise<string>((resolve, reject) =>{
 
 if (age <18) {
 
- reject(new Error("Access Denied: Must be 18 or older"));
-} 
-
+ reject(new Error("Access Denied: Must be 18 or older"));} 
 else {
  setTimeout(() => {
-        resolve("Access Granted");
+        
+resolve("Access Granted");
  }, 1000);
 
-    }
+ }
 
-  });
+  }
+
+);
 }
