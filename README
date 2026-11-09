@@ -1,0 +1,27 @@
+# Problem Solving with TypeScript & OOP
+
+This repository contains my solutions for the TypeScript and OOP assignment.
+
+## File Structure
+
+```text
+├── solutions.ts
+├── type-vs-interface.md
+├── type-narrowing.md
+└── README.md
+Description
+solutions.ts: Contains the solutions to all 8 coding problems covering basic types, type narrowing, tuples, generics, interfaces, classes with access modifiers, and promises.
+
+type-vs-interface.md: A blog post explaining the differences between type aliases and interfaces.
+
+type-narrowing.md: A blog post explaining type narrowing using typeof and the in operator.
+
+How to Run
+Clone the repository to your computer.
+
+Open the project folder in VS Code.
+
+Run the TypeScript compiler in watch mode:
+
+Bash
+tsc --watch
