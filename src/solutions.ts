@@ -1,38 +1,58 @@
 //ProBlem 01
 
-function multiplyValue(value: number, multiplier?: number): number {
-  if (multiplier === undefined) {
+function multiplyValue(value: number, multiplier?: number):number {
+
+
+  if (multiplier ===undefined) {
     return value * 2;
   }
+
+
   return value * multiplier;
 }
 
 //========================================================================================================================================
 //Problem 02
 
-function processInput(value: string | number | boolean): string | number {
-  if (typeof value === "string") {
+function processInput(value:string |number| boolean):string |number {
+  if (typeof value === "string")
+    
+    {
     return value.trim().toLowerCase();
-  } else if (typeof value === "number") {
+
+  } 
+  
+  else if (typeof value === "number")
+    
+    {
     return value * 10;
-  } else {
+  } 
+  
+  else {
     return value ? "Active" : "Inactive";
   }
+
 }
 
 //==========================================================================================================================================
 //Problem 03
 function formatCoordinate(
-  coordinate: readonly [number, number, string]
-): string {
-  const [latitude, longitude, locationName] = coordinate;
-  return `Location: ${locationName} (${latitude}, ${longitude})`;
+
+  coordinate: readonly [number,number,string]
+): 
+string {
+  const [latitude, longitude, locationName]= coordinate;
+
+ return `Location: ${locationName} (${latitude},${longitude})`;
 }
+
 
 //============================================================================================================================================
 //Problem 04
 
-function concatenateArrays<T>(...arrays: T[][]): T[] {
+function concatenateArrays<T>(...arrays:T[][]): T[] {
+
+
   return arrays.flat();
 }
 
@@ -40,66 +60,88 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 //Problem 05
 
 interface Course {
-  title: string;
+title:string;
   students: number;
-  isPublished: boolean;
+    isPublished:boolean;
 }
 
 function getPopularCourses(courses: Course[], minStudents: number): Course[] {
   return courses.filter(
-    (course: Course): boolean =>
+    
+    
+(course: Course): boolean =>
       course.isPublished && course.students >= minStudents
   );
+
 }
 
 //==========================================================================================================================================
 //Problem 06
 
-function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][] {
-  return items.map((item: T): T[K] => item[key]);
+function pluckValues<T, K extends keyof T>(items:T[], key:K):T[K][] {
+    
+  return items.map((item: T):T[K] => item[key]);
+
+  
 }
 
 //=========================================================================================================================================
 //Problem 07
 
 class Employee {
-  protected name: string;
-  private baseSalary: number;
+protected name:string;
+    private baseSalary: number;
 
-  constructor(name: string, baseSalary: number) {
-    this.name = name;
-    this.baseSalary = baseSalary;
+  constructor(name: string,baseSalary: number) {
+this.name = name;
+      this.baseSalary = baseSalary;
+
   }
 
   getDetails(): string {
+
     return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
+
+
   }
 }
 
 class Manager extends Employee {
-  private department: string;
 
-  constructor(name: string, baseSalary: number, department: string) {
+
+private department: string;
+
+constructor(name: string, baseSalary: number, department: string) {
+
     super(name, baseSalary);
-    this.department = department;
+ this.department = department;
   }
 
-  getRoleInfo(): string {
+getRoleInfo(): 
+string {
     return `Manager of ${this.department}: ${this.name}`;
   }
+
 }
 
 //=======================================================================================================================================
 //Problem 08
 
-async function validateAgeAsync(age: number): Promise<string> {
-  return new Promise<string>((resolve, reject) => {
-    if (age < 18) {
-      reject(new Error("Access Denied: Must be 18 or older"));
-    } else {
-      setTimeout(() => {
+async function validateAgeAsync(age: number):Promise<string> {
+
+return new Promise<string>((resolve, reject) =>{
+
+if (age <18) {
+
+ reject(new Error("Access Denied: Must be 18 or older"));
+} 
+
+else {
+ setTimeout(() => {
         resolve("Access Granted");
-      }, 1000);
+ }, 1000);
+
     }
+
   });
 }
